@@ -17,3 +17,5 @@ dotenv, Node.js, Express.js, mysql2, express-handlebars, JavaScript
 ## Credits 
 
 my repository can be found at https://github.com/codingprincess111/user-management
+
+code along https://www.youtube.com/watch?v=1aXZQcG2Y6I&t=7249s

@@ -1,12 +1,29 @@
 const mysql = require('mysql2');
 
+
+// // Connection Pool
+let connection
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createPool(process.env.JAWSDB_URL)
+
+    
+} else {
+    connection = mysql.createPool({
+        connectionLimit : 100,
+        host : process.env.JAWSDB_URL,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
+    });
+}
+
 // Connection 
-let connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME
-});
+// let connection = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASS,
+//   database: process.env.DB_NAME
+// });
 
 // View Users
 exports.view = (req, res) => {
